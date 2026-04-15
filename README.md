@@ -40,21 +40,18 @@ Marks a step as done and records completion notes. Returns the updated list.
 
 ## Setup
 
-Requires [uv](https://docs.astral.sh/uv/) — install it first if you don't have it:
+Requires [uv](https://docs.astral.sh/uv/). Install it if you don't have it:
 
 ```bash
 pip install uv
 ```
 
-Clone and set up the project:
+Clone the repo and install dependencies:
 
 ```bash
 git clone https://github.com/agenticmohit/agent-loop-from-scratch
 cd agent-loop-from-scratch
-uv venv
-source .venv/bin/activate        # Mac/Linux
-.venv\Scripts\activate           # Windows
-uv add openai rich python-dotenv
+uv sync
 ```
 
 Create a `.env` file:
@@ -66,7 +63,7 @@ OPENAI_API_KEY=your_key_here
 Run:
 
 ```bash
-python agent_loop.py
+uv run main.py
 ```
 
 ## Sample Output
