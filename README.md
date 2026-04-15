@@ -6,10 +6,10 @@ A raw OpenAI agent loop built from first principles — no frameworks, no LangCh
 
 Most AI agent courses use LangChain or the OpenAI Agents SDK which hide the agent loop behind abstractions. This project implements that loop manually to show exactly what's happening underneath every framework.
 
-The agent solves a problem by:
-1. Breaking it into steps using a todo list
-2. Carrying out each step using tool calls
-3. Returning a final answer in Rich console markup
+The agent solves a multi-step crypto price calculation by:
+1. Breaking the problem into steps using a todo list
+2. Carrying out each calculation step using tool calls
+3. Returning a formatted final answer in the terminal
 
 ## How The Agent Loop Works
 
@@ -26,10 +26,20 @@ The key is `finish_reason`. When GPT returns `"tool_calls"` it wants to run a fu
 ## Tools
 
 **`create_todos(descriptions: list[str])`**
-Creates a list of steps for the agent to work through. Returns the full todo list.
+Creates a list of calculation steps for the agent to work through. Returns the full todo list.
 
 **`mark_complete(index: int, completion_notes: str)`**
-Marks a step as done and records completion notes. Returns the updated list.
+Marks a step as done and records the result. Returns the updated list.
+
+## The Problem
+
+```
+A crypto trader buys Bitcoin at $42,000.
+It drops 15% the first week, then rises 22% the second week.
+What is the current price and the net percentage gain or loss?
+```
+
+The agent plans its own steps, calculates each one, and returns the final answer — no hardcoded logic, just GPT reasoning with tools.
 
 ## Stack
 
@@ -68,7 +78,7 @@ uv run main.py
 
 ## Sample Output
 
-The agent solves a train timing problem by creating todo steps for each calculation, marking them complete as it works through them, then returning a formatted final answer in the terminal.
+The agent creates todo steps — calculate price after week 1 drop, calculate price after week 2 rise, calculate net change — marks each complete with the result, then returns a formatted terminal summary.
 
 ## Why I Built This
 

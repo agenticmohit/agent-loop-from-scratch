@@ -118,10 +118,10 @@ If any quantity isn't provided in the question, then include a step to come up w
 Provide your solution in Rich console markup without code blocks.
 Do not ask the user questions or clarification; respond only with the answer after using your tools.
 """
-user_message = """"
-A train leaves Boston at 2:00 pm traveling 60 mph.
-Another train leaves New York at 3:00 pm traveling 80 mph toward Boston.
-When do they meet?
+user_message = """
+A crypto trader buys Bitcoin at $42,000.
+It drops 15% the first week, then rises 22% the second week.
+What is the current price and the net percentage gain or loss from the original purchase?
 """
 messages = [{"role": "system", "content": system_message}, {"role": "user", "content": user_message}]
 
