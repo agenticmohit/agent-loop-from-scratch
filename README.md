@@ -34,7 +34,7 @@ Marks a step as done and records completion notes. Returns the updated list.
 ## Stack
 
 - Python
-- OpenAI API `gpt-4o-mini`
+- OpenAI API `gpt-5.2`
 - Rich — terminal formatting
 - python-dotenv — API key management
 
