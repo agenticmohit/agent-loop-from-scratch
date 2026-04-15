@@ -129,10 +129,3 @@ todos, completed = [], []
 
 
 loop(messages)
-
-
-    
-        
-    
-
-
